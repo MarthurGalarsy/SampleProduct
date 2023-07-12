@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c963a023-17e1-4b05-918f-0433bd7ed9dc" name="変更" comment="gitignore">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +197,7 @@
       <workItem from="1689163431061" duration="567000" />
       <workItem from="1689164021816" duration="550000" />
       <workItem from="1689164579150" duration="315000" />
-      <workItem from="1689165015143" duration="588000" />
+      <workItem from="1689165015143" duration="671000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore">
       <created>1689164416283</created>
