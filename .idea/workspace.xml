@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c963a023-17e1-4b05-918f-0433bd7ed9dc" name="変更" comment="gitignore">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin スクリプト (ベータ).build.gradle.kts">
+  <component name="RunManager" selected="Shell Script.gradlew">
     <configuration name="SampleProduct [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -178,8 +178,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin スクリプト (ベータ).build.gradle.kts" />
         <item itemvalue="Shell Script.gradlew" />
+        <item itemvalue="Kotlin スクリプト (ベータ).build.gradle.kts" />
         <item itemvalue="Gradle.SampleProduct [bootRun]" />
         <item itemvalue="Gradle.SampleProduct [war]" />
         <item itemvalue="Gradle.SampleProduct [testClasses]" />
@@ -197,7 +197,8 @@
       <workItem from="1689163431061" duration="567000" />
       <workItem from="1689164021816" duration="550000" />
       <workItem from="1689164579150" duration="315000" />
-      <workItem from="1689165015143" duration="671000" />
+      <workItem from="1689165015143" duration="772000" />
+      <workItem from="1689165791673" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore">
       <created>1689164416283</created>
@@ -206,7 +207,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689164416283</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="gitignore">
+      <created>1689165695216</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689165695216</updated>
+    </task>
+    <task id="LOCAL-00003" summary="gitignore">
+      <created>1689165748168</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689165748168</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
