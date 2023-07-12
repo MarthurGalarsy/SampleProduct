@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Member</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>Delete Member</h1>
+    <form @submit.prevent="deleteMember">
+        <label>ID: {{ member.id }}</label><br>
+        <label>Name: {{ member.name }}</label><br>
+        <label>Email: {{ member.mail_address }}</label><br>
+        <label>Status: {{ member.status }}</label><br>
+        <button type="submit">Delete</button>
+    </form>
+</div>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                member: {
+                    id: '',
+                    name: '',
+                    mail_address: '',
+                    status: ''
+                }
+            }
+        },
+        methods: {
+            deleteMember() {
+                axios.delete(`/members/${this.member.id}`)
+                    .then(() => alert('Member deleted!'));
+            }
+        },
+        mounted() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            axios.get(`/members/${id}`)
+                .then(response => (this.member = response.data));
+        }
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Member</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>Create Member</h1>
+    <form @submit.prevent="createMember">
+        <label>Name: <input v-model="newMember.name" required></label><br>
+        <label>Email: <input v-model="newMember.mail_address" required></label><br>
+        <label>Status: <input type="checkbox" v-model="newMember.status"></label><br>
+        <button type="submit">Create</button>
+    </form>
+</div>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                newMember: {
+                    name: '',
+                    mail_address: '',
+                    status: false
+                }
+            };
+        },
+        methods: {
+            createMember() {
+                axios.post('/members', this.newMember)
+                    .then(() => {
+                        this.newMember.name = '';
+                        this.newMember.mail_address = '';
+                        this.newMember.status = false;
+                    });
+            }
+        }
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>

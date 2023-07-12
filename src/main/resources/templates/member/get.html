@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Members</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>Members List</h1>
+    <button @click="goToCreate()">Update</button>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="member in members" :key="member.id">
+            <td><a @click="goToDetail(member.id)">{{ member.id }}</a></td>
+            <td>{{ member.name }}</td>
+            <td>{{ member.mail_address }}</td>
+            <td>{{ member.status }}</td>
+            <td>
+                <button @click="goToUpdate(member.id)">Update</button>
+                <button @click="goToDelete(member.id)">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                members: []
+            }
+        },
+        methods: {
+            goToDetail(memberId) {
+                window.location.href = `/detail.html?id=${memberId}`;
+            },
+            goToCreate() {
+                window.location.href = `./create.html`;
+            },
+            goToUpdate(memberId) {
+                window.location.href = `./update.html?id=${memberId}`;
+            },
+            goToDelete(memberId) {
+                window.location.href = `./delete.html?id=${memberId}`;
+            }
+        },
+        mounted() {
+            axios.get('/members')
+                .then(response => (this.members = response.data))
+        }
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>

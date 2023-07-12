@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Member</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>Update Member</h1>
+    <form @submit.prevent="updateMember">
+        <label>ID: {{ member.id }}</label><br>
+        <label>Name: <input v-model="member.name" required></label><br>
+        <label>Email: <input v-model="member.mail_address" type="email" required></label><br>
+        <label>Status: <input v-model="member.status" type="checkbox"></label><br>
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                member: {
+                    id: '',
+                    name: '',
+                    mail_address: '',
+                    status: ''
+                }
+            }
+        },
+        methods: {
+            updateMember() {
+                axios.put(`/members/${this.member.id}`, this.member)
+                    .then(() => alert('Member updated!'));
+            }
+        },
+        mounted() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            axios.get(`/members/${id}`)
+                .then(response => (this.member = response.data));
+        }
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>
